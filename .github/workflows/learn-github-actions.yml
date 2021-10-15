@@ -17,6 +17,6 @@ jobs:
           node-version: '14'
       - name: Build PETSc
         run: |
-	  echo "install_petsc.sh"
-	  #./install_petsc.sh
+          echo "install_petsc.sh"
+          ./install_petsc.sh
 
