@@ -1,25 +1,20 @@
 name: learn-github-actions
+
 on:
   push:
     branches: [ master ]
   pull_reques: [ master ]
 
-jobs:
-  check-bats-version:
-    runs-on: ${{ matrix.os }}$
 
-    # A build matrix storing all desired configurations.
-    strategy:
-      matrix:
-        os: [ubuntu-latest] #, macos-latest]
-        build-type: [Debug] #, Release]
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-
       - name: Build PETSc
         - run: ./install_petsc.sh
 
